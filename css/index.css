@@ -2,17 +2,85 @@
 @import url(./reset.css);
 @import url(./common.css);
 
-/* header */
+/* 섹션타이틀 */
+.title{
+    width: 1400px;
+    margin: 100px auto 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
 
+.title > h2{font-size: 45px;}
+.title > h2 > small{
+    font-size: 20px;
+    font-weight: 400;
+    display: block;
+}
+.title > a::after{
+    content: 'arrow_forward';
+    font-family: 'Material Symbols Outlined';
+    vertical-align: bottom;
+}
+
+/* 바텀버튼 */
+.bottom{ 
+    font-size: 0; 
+    width: 1400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px auto;
+}
+
+.bottom > p > span{ 
+    margin: 3px;
+    display: inline-block;
+}
+
+.bottom > p > span::after{
+    content: '';
+    width: 15px; height: 15px;
+    background-color: lightgray;
+    border-radius: 100%;
+    display: inline-block;
+}
+.bottom > p > span:nth-of-type(1)::after{
+    width: 50px; 
+    background-color: black;
+    border-radius: 50px;
+}
+
+.bottom > div > a{
+    margin: 3px;
+    display: inline-block;
+}
+.bottom > div > a::after{
+    display: inline-block;
+    color: gray;
+    border: 1px solid gray;
+    border-radius: 10px;
+    font-size: 30px;
+    font-family: 'Material Symbols Outlined';
+    padding: 3px 5px ;
+}
+.bottom > div > a:nth-of-type(1)::after{
+    content: 'arrow_back_ios_New';
+}
+.bottom > div > a:nth-of-type(2)::after{
+    content: 'arrow_forward_ios';
+}
+
+/* header */
 header{
     width: 100%; 
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.5);
     position: fixed;
     left: 0; top: 0;
 }
 
 .header{
-    width: 1420px;
+    width: 1400px;
     display: flex;
     margin: 5px auto;
     align-items: center;
@@ -43,6 +111,7 @@ header{
 
 /* main */
 
+/* spot */
 .spot{
     width: 100%; height: 100vb;
     background: url('../imgs/img_main-spot.jpg') 0 0 / cover no-repeat;
@@ -53,12 +122,12 @@ header{
 }
 
 .spot .booking{
-    width: 1420px;
-    background-color: rgba(0, 0, 0, 0.2);
+    width: 1400px;
+    background-color: rgba(0, 0, 0, 0.5);
     padding: 30px 70px;
     border-radius: 20px;
     position: absolute;
-    bottom: 50px;
+    bottom: 10%;
     display: flex;
     justify-content: space-between;    
 }
@@ -85,4 +154,153 @@ header{
     content: 'search';
     font-family: 'Material Symbols Outlined';
     vertical-align:middle;
+}
+
+/* room */
+.room{ width: 100%;}
+
+.room .con{
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 2%;
+}
+.room .con li{
+    width: 1400px;
+    background-color: antiquewhite;
+    border-radius: 20px;
+    flex-shrink: 0; /*부모가 강제로 줄일 수 없게*/
+}
+.room .con li:nth-of-type(1){
+    height: 90%; 
+    background: url('../imgs/img_main-R1.jpg') 0 / cover;
+}
+.room .con li:nth-of-type(2){
+    height: 100%;
+    background: url('../imgs/img_main-R2.jpg') 0 / cover;
+}
+.room .con li:nth-of-type(3){
+    height: 90%;
+    background: url('../imgs/img_main-R3.jpg') 0 / cover;
+}
+
+
+
+
+/* facilties */
+.facilties > figure{
+    width: 1400px;
+    display: flex;
+    margin: 0 auto;
+    background-color: black;
+}
+.facilties > figure > figcaption{
+    margin: 0;
+    flex-grow: 1;
+    height: 600px;
+    transition: 0.5s;
+}
+
+.facilties > figure > figcaption:nth-of-type(1){
+    background: url('../imgs/img_main-F1.jpg') center center ;
+    opacity: 0.6;
+}
+.facilties > figure > figcaption:nth-of-type(2){
+    background: url('../imgs/img_main-F2.jpg') center center;
+    opacity: 0.6;
+}
+.facilties > figure > figcaption:nth-of-type(3){
+    background: url('../imgs/img_main-F3.jpg') center center;
+    opacity: 0.6;
+}
+.facilties > figure > figcaption:hover{
+    flex-grow: 5;
+    opacity: 1;
+}
+
+/* around */
+.around{
+    width: 1400px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    gap: 20px;
+}
+.around p{border-radius: 20px;}
+
+.A1{
+    width: 1400px;
+    margin-top: 150px;
+    display: flex;
+    justify-content: space-between;
+}
+.A1 > h2{font-size: 45px;}
+.A1 > h2 > small{
+    font-size: 20px;
+    font-weight: 400;
+    display: block;
+}
+.A1 > h2 > small:nth-of-type(2){ margin-top: 50px;}
+
+.A1 > p{
+    width: 740px; height: 500px;
+    background: url('../imgs/img_main-A1.jpg') center / cover ;
+}
+
+.A2{text-align: right;}
+.A2 > p{
+    width: 860px; height: 360px;
+    background: url('../imgs/img_main-A2.jpg') center / cover ;
+    margin-bottom: 70px;
+}
+.A2 > a::after{
+    content: 'arrow_forward';
+    font-family: 'Material Symbols Outlined';
+    vertical-align: bottom;
+}
+
+.A3 > p{
+    width: 520px; height: 460px;
+    background: url('../imgs/img_main-A3.jpg') center / cover ;
+    margin: 0;
+}
+
+
+/* event */
+.event{width: 100%;}
+
+.E1{
+    position: relative;
+    width: 500px; height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    background: url('../imgs/img_main-E1.jpg');
+}
+
+.E1 > b{
+    position: absolute;
+    background-color: olivedrab;
+    padding: 10px 20px;
+    top: 5%; left: 5%;
+    color: white;
+    border-radius: 10px;
+}
+
+.E1 > div{
+    position: absolute;
+    background-color: white;
+    padding: 30px;
+    bottom: 0; left: 0; 
+    width: 40%; height: 20%;
+    border-radius: 0 20px 0 0;
+}
+.E1 > div > p:nth-of-type(1){
+    height: 70%;
+    overflow: hidden;
+    margin-bottom: 10%;
+}
+.E1 > div > p:nth-of-type(2){
+    font-size: 14px;
+    color: gray;   
 }
